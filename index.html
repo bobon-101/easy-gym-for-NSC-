@@ -10,6 +10,53 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        // Production debug helper to catch and display any errors directly on the blank screen
+        window.addEventListener('error', function(e) {
+            var debugBox = document.getElementById('debug-error-box');
+            if (!debugBox) {
+                debugBox = document.createElement('div');
+                debugBox.id = 'debug-error-box';
+                debugBox.style.position = 'fixed';
+                debugBox.style.top = '10px';
+                debugBox.style.left = '10px';
+                debugBox.style.right = '10px';
+                debugBox.style.background = '#ef4444';
+                debugBox.style.color = 'white';
+                debugBox.style.padding = '15px';
+                debugBox.style.borderRadius = '8px';
+                debugBox.style.zIndex = '999999';
+                debugBox.style.fontFamily = 'monospace';
+                debugBox.style.whiteSpace = 'pre-wrap';
+                debugBox.style.fontSize = '12px';
+                debugBox.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.5)';
+                document.body.appendChild(debugBox);
+            }
+            debugBox.textContent += '\n[Runtime Error] ' + e.message + ' at ' + e.filename + ':' + e.lineno + ':' + e.colno + '\n' + (e.error ? e.error.stack : '');
+        });
+        window.addEventListener('unhandledrejection', function(e) {
+            var debugBox = document.getElementById('debug-error-box');
+            if (!debugBox) {
+                debugBox = document.createElement('div');
+                debugBox.id = 'debug-error-box';
+                debugBox.style.position = 'fixed';
+                debugBox.style.top = '10px';
+                debugBox.style.left = '10px';
+                debugBox.style.right = '10px';
+                debugBox.style.background = '#ef4444';
+                debugBox.style.color = 'white';
+                debugBox.style.padding = '15px';
+                debugBox.style.borderRadius = '8px';
+                debugBox.style.zIndex = '999999';
+                debugBox.style.fontFamily = 'monospace';
+                debugBox.style.whiteSpace = 'pre-wrap';
+                debugBox.style.fontSize = '12px';
+                debugBox.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.5)';
+                document.body.appendChild(debugBox);
+            }
+            debugBox.textContent += '\n[Promise Rejection] ' + e.reason + (e.reason && e.reason.stack ? '\n' + e.reason.stack : '');
+        });
+    </script>
 </head>
 <body>
     <div id="toast" class="toast"></div>

@@ -129,7 +129,12 @@ const App = {
     }
 };
 
-// Initialize App on DOMContentLoaded
-document.addEventListener('DOMContentLoaded', () => {
+// Initialize App robustly
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+        App.init();
+    });
+} else {
     App.init();
-});
+}
+
