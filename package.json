@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "vite"
+    "dev": "vite",
+    "build": "node build.js",
+    "preview": "vite preview"
   },
   "devDependencies": {
     "vite": "^5.0.0"
