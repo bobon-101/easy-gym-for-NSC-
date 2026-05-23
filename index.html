@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife Platform</title>
+    <meta name="description" content="A modern fitness workout platform for achieving your goals.">
+    <!-- Google Fonts for modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="toast" class="toast"></div>
+
+    <nav id="navbar" class="navbar hidden">
+        <div class="nav-container">
+            <div class="logo">FitLife</div>
+            <ul class="nav-links">
+                <li><a href="#" data-route="dashboard">Dashboard</a></li>
+                <li><a href="#" data-route="profile">Profile</a></li>
+                <li><a href="#" id="logout-btn">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main id="app">
+        <!-- Dynamic content will be injected here by app.js -->
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/pages/auth.js"></script>
+    <script src="js/pages/dashboard.js"></script>
+    <script src="js/pages/workout.js"></script>
+    <script src="js/pages/profile.js"></script>
+    <script src="js/app.js"></script>
+    
+    <!-- MediaPipe Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+</body>
+</html>

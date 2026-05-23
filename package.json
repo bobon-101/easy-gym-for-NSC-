@@ -1,0 +1,11 @@
+{
+  "name": "nsc-easy-gym",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  }
+}
